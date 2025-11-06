@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://un-icompressor1.vercel.app/sitemap.xml
+
+

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0f1a" />
+    <title>UNIcompressor – Universal File Compressor for macOS</title>
+    <meta name="description" content="UNIcompressor — Compress 100+ file types (images, video, audio, Office, PDF). Local, fast, up to 90% reduction." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="UNIcompressor – Compress files up to 90% | macOS" />
+    <meta property="og:description" content="Compress 100+ formats. Local, private, fast." />
+    <meta property="og:image" content="https://un-icompressor1.vercel.app/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UNIcompressor – Universal File Compressor for macOS" />
+    <meta name="twitter:description" content="Compress 100+ formats. Local, private, fast." />
+    <meta name="twitter:image" content="https://un-icompressor1.vercel.app/og-image.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Analytics (Plausible) -->
+    <script defer data-domain="un-icompressor1.vercel.app" src="https://plausible.io/js/script.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"SoftwareApplication",
+      "name":"UNIcompressor",
+      "operatingSystem":"Mac OS",
+      "applicationCategory":"Utilities",
+      "url":"https://un-icompressor1.vercel.app",
+      "author":{"@type":"Person","name":"Lekhraj K. Vatwani"},
+      "softwareVersion":"1.0",
+      "description":"Compress 100+ file types (images, video, audio, Office, PDF) locally on macOS."
+    }
+    </script>
+  </head>
+  <body>
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="UNIcompresser home">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="./playstore.png" alt="UNIcompresser logo" width="28" height="28" decoding="async" />
+        </span>
+        <span class="brand-name">UNIcompresser</span>
+      </a>
+      <nav class="nav">
+        <a href="/features.html">Features</a>
+        <a href="/supported-formats.html">Supported Formats</a>
+        <a href="/download.html" class="btn small primary">Download</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="badge">macOS • Native • Ultra-fast</div>
+          <h1>
+            <span class="line">Compress smarter.</span>
+            <span class="line accent">Extract faster.</span>
+            <span class="line">Look better.</span>
+          </h1>
+          <p class="subhead">UNIcompresser delivers blazingly fast compression and extraction with a delightful, minimal UI engineered for macOS.</p>
+          <div class="cta">
+            <a id="downloadBtn" href="./UNIcompresser.dmg" class="btn primary large" download>
+              <span class="btn-glow"></span>
+              <span class="btn-text">Download for macOS (.dmg)</span>
+            </a>
+            <a href="#features" class="btn ghost large">See features</a>
+          </div>
+          <div class="downloads-badge">Total downloads: <strong data-download-count>—</strong></div>
+          <div class="mockup" aria-hidden="true">
+            <div class="window" id="productWindow">
+              <div class="window-bar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="window-body">
+                <div class="card">
+                  <div class="card-left">
+                    <div class="file-icon">📦</div>
+                    <div>
+                      <div class="file-name">ProjectAssets.zip</div>
+                      <div class="file-meta">2.1 GB • 12,842 items</div>
+                    </div>
+                  </div>
+                  <div class="progress">
+                    <div class="bar"></div>
+                    <div class="hint">Compressing… 78%</div>
+                  </div>
+                </div>
+                <div class="chips">
+                  <span class="chip">.zip</span>
+                  <span class="chip">.tar.gz</span>
+                  <span class="chip">.7z</span>
+                  <span class="chip">.rar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase-3d" aria-labelledby="showcaseTitle">
+        <div class="section-head">
+          <h2 id="showcaseTitle">Immersive 3D Experience</h2>
+          <p>Move your mouse or tilt your device — explore UNIcompresser in depth.</p>
+        </div>
+        <div class="scene" id="scene3d" aria-hidden="true">
+          <div class="camera" id="camera3d">
+            <div class="layer floor" data-depth="-0.2" style="--z:-240px"></div>
+            <div class="layer panel panel-a" data-depth="0.25" style="--z:120px">
+              <div class="panel-inner">⚙️ Multi‑Format Engine</div>
+            </div>
+            <div class="layer panel panel-b" data-depth="0.35" style="--z:200px">
+              <div class="panel-inner">🧠 Smart Algorithms</div>
+            </div>
+            <div class="layer sphere" data-depth="0.5" style="--z:280px"></div>
+            <div class="layer ring" data-depth="0.15" style="--z:180px"></div>
+            <div class="layer spark s1" data-depth="0.45" style="--z:240px"></div>
+            <div class="layer spark s2" data-depth="0.55" style="--z:260px"></div>
+            <div class="layer spark s3" data-depth="0.3" style="--z:220px"></div>
+            <div class="layer glow-light" data-depth="0.1" style="--z:100px"></div>
+            <div class="layer badge b1" data-depth="0.32" style="--z:210px">90% Target</div>
+            <div class="layer badge b2" data-depth="0.22" style="--z:160px">Batch</div>
+            <div class="layer badge b3" data-depth="0.42" style="--z:240px">Secure</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <div class="section-head">
+          <h2>💎 UNIcompresser — Universal File Compression Reinvented</h2>
+          <p>Powerful, intelligent, and beautiful. Built to compress anything with precision and style.</p>
+        </div>
+
+        <div class="section-head">
+          <h3>🚀 Core Features</h3>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card reveal">
+            <div class="icon">🗂️</div>
+            <h3>1) Multi-Format Compression Engine</h3>
+            <p>Compresses documents, images, videos, audio, archives, executables, PDFs, and Office files — all handled natively.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">🧠</div>
+            <h3>2) Smart Adaptive Algorithms</h3>
+            <p>Chooses the best strategy per format — lossless for text, quality-balanced for images, codec-based for media.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">🎯</div>
+            <h3>3) True 90% Reduction Accuracy</h3>
+            <p>Real compression ratios tuned via content-aware optimization. Ask for 90% and it aims for 90%.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">🌐</div>
+            <h3>4) Cross-Platform File Support</h3>
+            <p>100+ formats across macOS, Windows, Linux: .zip, .rar, .7z, .pdf, .jpg, .png, .mp4, .mov, .mp3, .wav, .docx, .xlsx, .pptx, .exe, .pkg, .dmg, and more.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">📄</div>
+            <h3>5) Office File Compression</h3>
+            <p>Rebuilds .docx, .xlsx, .pptx with advanced XML and media recompression — up to 70% smaller safely.</p>
+          </div>
+        </div>
+
+        <div class="section-head">
+          <h3>🧠 Smart Automation</h3>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card reveal">
+            <div class="icon">🔍</div>
+            <h3>6) Intelligent Auto-Detect</h3>
+            <p>Detects file type, compression potential, and optimal settings instantly.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">📦</div>
+            <h3>7) Batch Compression</h3>
+            <p>Drag multiple files or folders — compresses them all in parallel with live progress.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">🎚️</div>
+            <h3>8) Dynamic Quality Control</h3>
+            <p>Sliders for 50%, 70%, 90% reduction with instant estimated output size.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">🧬</div>
+            <h3>9) Aggressive Mode</h3>
+            <p>AI-driven multi-pass compression that finds deeper redundancies for media and archives.</p>
+          </div>
+        </div>
+
+        <div class="section-head">
+          <h3>🎨 Design & Experience</h3>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card reveal">
+            <div class="icon">🎛️</div>
+            <h3>10) Triple‑Vibe Interface</h3>
+            <p>Choose your style: Apple‑minimalist, gradient tech look, or a fun, animated flashy theme.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">🎉</div>
+            <h3>11) Animated Visual Feedback</h3>
+            <p>Live progress ring, size comparison, confetti on success, and smooth spring transitions.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">🗂️</div>
+            <h3>12) File Export Anywhere</h3>
+            <p>macOS file exporter with Desktop as a smart default and full control over destination.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">💠</div>
+            <h3>13) Beautiful About, Help & Credits</h3>
+            <p>Custom logo, thoughtful windows, close buttons, and menu‑bar integration like a true Mac app.</p>
+          </div>
+        </div>
+
+        <div class="section-head">
+          <h3>🧩 Advanced Features</h3>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card reveal">
+            <div class="icon">🧪</div>
+            <h3>14) Lossless / Lossy Modes</h3>
+            <p>Pick perfect preservation or high‑efficiency savings depending on your needs.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">🧵</div>
+            <h3>15) Multi‑Threaded Performance</h3>
+            <p>Uses all available CPU cores for maximum throughput and speed.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">🔐</div>
+            <h3>16) Secure Compression</h3>
+            <p>Local, private processing. Optional password‑protected archives (planned).</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">🪞</div>
+            <h3>17) Integrated Preview</h3>
+            <p>Compare original vs compressed sizes before you save — confidence built‑in.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">🖥️</div>
+            <h3>18) Native SwiftUI Build</h3>
+            <p>Lightning‑fast and tuned for macOS architectures for a truly native feel.</p>
+          </div>
+        </div>
+
+        <div class="section-head">
+          <h3>🌍 Why UNIcompresser?</h3>
+          <p>Because no single tool should limit your compression power. UNIcompresser blends AI‑optimized logic, professional‑grade performance, and a design so fluid that even top‑tier apps feel outdated.</p>
+        </div>
+      </section>
+
+      <section class="performance" id="performance">
+        <div class="section-head">
+          <h2>Numbers that matter</h2>
+          <p>Benchmarks on a MacBook Pro (M-series) with 16GB RAM. Your mileage may vary.</p>
+        </div>
+        <div class="charts">
+          <div class="chart reveal">
+            <div class="chart-bar" data-value="92">
+              <span class="chart-label">Compression speed</span>
+              <span class="chart-value">92%</span>
+            </div>
+          </div>
+          <div class="chart reveal">
+            <div class="chart-bar" data-value="88">
+              <span class="chart-label">Decompression speed</span>
+              <span class="chart-value">88%</span>
+            </div>
+          </div>
+          <div class="chart reveal">
+            <div class="chart-bar" data-value="71">
+              <span class="chart-label">Average size reduction</span>
+              <span class="chart-value">71%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="download">
+        <div class="cta-inner">
+          <h2>Ready to compress the future?</h2>
+          <p>Get UNIcompresser for macOS. Beautiful. Powerful. Effortless.</p>
+          <a id="downloadBtn2" href="./UNIcompresser.dmg" class="btn primary xlarge" download>
+            <span class="btn-glow"></span>
+            <span class="btn-text">Download .dmg</span>
+          </a>
+          <div class="downloads-badge">Total downloads: <strong data-download-count>—</strong></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="brand tiny">
+          <span class="brand-logo" aria-hidden="true"><img src="./playstore.png" alt="UNIcompresser logo" width="20" height="20" decoding="async" /></span>
+          <span>UNIcompresser</span>
+        </div>
+        <nav class="footer-nav">
+          <a href="#features">Features</a>
+          <a href="#performance">Performance</a>
+          <a href="#download">Download</a>
+        </nav>
+        <div class="legal">© <span id="year"></span> UNIcompresser. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+  </html>
+
+
